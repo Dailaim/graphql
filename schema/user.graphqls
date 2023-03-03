@@ -1,0 +1,25 @@
+type User {
+  id: ID! @goTag(key: "bson", value: "_id")
+  name: String!
+  email: String!
+  posts: [Post!]!
+  password: String!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  id: ID! @goTag(key: "bson", value: "_id")
+  name: String
+  email: String
+  password: String!
+}
+
+input DeleteUserInput {
+  id: ID! @goTag(key: "bson", value: "_id")
+}
+

@@ -1,0 +1,23 @@
+type Post {
+  id: ID! @goTag(key: "bson", value: "_id")
+  title: String!
+  content: String!
+  author: User!
+}
+
+input CreatePostInput {
+  title: String!
+  content: String!
+  authorID: ID!
+}
+
+input UpdatePostInput {
+  id: ID! @goTag(key: "bson", value: "_id")
+  title: String
+  content: String
+}
+
+input DeletePostInput {
+  id: ID! @goTag(key: "bson", value: "_id")
+}
+
